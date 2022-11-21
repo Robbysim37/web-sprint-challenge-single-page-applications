@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import styled from "styled-components"
 import Button from "./NavButton"
+import {Link} from "react-router-dom"
 
 const HeaderStyles = styled.div`
 color: red;
@@ -30,8 +31,8 @@ const Header = (props) => {
         <HeaderStyles>
             <h1>Bloomtech Pizza</h1>
             <div>
-                <Button name="home" selected={homeSelected} setSelected={setSelected}>Home</Button>
-                <Button name="help"selected={helpSelected} setSelected={setSelected}>Help</Button>
+                <Link to="/" children={<Button name="home" selected={homeSelected} setSelected={setSelected}>Home</Button>}></Link>
+                <Link to="/help" children={<Button name="help"selected={helpSelected} setSelected={setSelected}>Help</Button>}></Link>
             </div>
         </HeaderStyles>
     )
