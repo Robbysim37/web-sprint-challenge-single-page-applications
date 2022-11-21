@@ -1,7 +1,7 @@
 import React from "react"
 import pizza from "../assets/Pizza.jpg"
 import styled from "styled-components"
-import Button from "./Button"
+import {Link} from "react-router-dom"
 
 const PizzaStyle = styled.div`
 margin:auto;
@@ -23,7 +23,7 @@ const Homepage = () => {
     return(
     <PizzaStyle style={{ backgroundImage: `url(${pizza})` }}>
         <TextStyles>Your favorite food, delivered while coding!</TextStyles>
-        <Button>Order Now!</Button>
+        <Link id="order-pizza" to="/pizza" children={<button>Order Now!</button>}/>
     </PizzaStyle>
     )
 }
